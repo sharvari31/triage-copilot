@@ -1,0 +1,13 @@
+services:
+  api:
+    build: .
+    image: triage-copilot:latest
+    ports:
+      - "8001:8000"   # host 8001 (8000 was taken on my machine)
+    env_file: .env
+    volumes:
+      - triage-data:/data   # keeps pending approvals across restarts
+    restart: unless-stopped
+
+volumes:
+  triage-data:

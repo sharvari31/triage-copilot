@@ -1,0 +1,40 @@
+{"ticket_id": "E-01", "subject": "Need to change my card", "body": "My old debit card expired last week. How do I put my new card on the account?", "category": "billing", "article_id": "KB-001"}
+{"ticket_id": "E-02", "subject": "Charged twice??", "body": "I see two charges of Rs 999 on my bank statement for the same month. Please fix this.", "category": "billing", "article_id": "KB-002"}
+{"ticket_id": "E-03", "subject": "Downgrade plan", "body": "I want to move from Pro to Basic, will I lose money for the rest of this month?", "category": "billing", "article_id": "KB-003"}
+{"ticket_id": "E-04", "subject": "Cancel subscription please", "body": "I don't use the service anymore. How do I stop it renewing next month?", "category": "billing", "article_id": "KB-003"}
+{"ticket_id": "E-05", "subject": "GST invoice required", "body": "Our finance team needs invoices with our GSTIN for the last two months.", "category": "billing", "article_id": "KB-004"}
+{"ticket_id": "E-06", "subject": "Payment keeps failing", "body": "Renewal payment failed three times and now my account is read-only. Card is fine.", "category": "billing", "article_id": "KB-005"}
+{"ticket_id": "E-07", "subject": "Add UPI", "body": "Can I pay with UPI instead of credit card going forward?", "category": "billing", "article_id": "KB-001"}
+{"ticket_id": "E-08", "subject": "Forgot password", "body": "I can't remember my password and the login page won't let me in.", "category": "account", "article_id": "KB-006"}
+{"ticket_id": "E-09", "subject": "Lost phone with authenticator", "body": "My phone was stolen and it had my 2FA app. I can't log in now.", "category": "account", "article_id": "KB-007"}
+{"ticket_id": "E-10", "subject": "Update email", "body": "I changed jobs, need to switch my login email to my personal gmail.", "category": "account", "article_id": "KB-008"}
+{"ticket_id": "E-11", "subject": "Locked out", "body": "It says my account is locked after I typed the wrong password a few times.", "category": "account", "article_id": "KB-009"}
+{"ticket_id": "E-12", "subject": "Delete my account", "body": "Please remove my account and all my personal data permanently.", "category": "account", "article_id": "KB-010"}
+{"ticket_id": "E-13", "subject": "Reset link not arriving", "body": "I clicked forgot password twice but no reset email ever shows up.", "category": "account", "article_id": "KB-006"}
+{"ticket_id": "E-14", "subject": "Set up 2FA", "body": "How do I turn on two factor authentication for extra security?", "category": "account", "article_id": "KB-007"}
+{"ticket_id": "E-15", "subject": "App crashes immediately", "body": "The Android app closes as soon as I open it since yesterday's update.", "category": "technical", "article_id": "KB-011"}
+{"ticket_id": "E-16", "subject": "No notification emails", "body": "I stopped receiving the order update emails, nothing in my inbox.", "category": "technical", "article_id": "KB-012"}
+{"ticket_id": "E-17", "subject": "Phone and laptop out of sync", "body": "Changes I make on the web don't appear on my phone app.", "category": "technical", "article_id": "KB-013"}
+{"ticket_id": "E-18", "subject": "Site shows 502 error", "body": "Your website keeps showing a 502 Bad Gateway page when I open the dashboard.", "category": "technical", "article_id": "KB-014"}
+{"ticket_id": "E-19", "subject": "Getting 429 from API", "body": "Our integration is getting Too Many Requests errors from your API.", "category": "technical", "article_id": "KB-015"}
+{"ticket_id": "E-20", "subject": "Cannot upload PDF", "body": "Uploading a 30MB PDF fails every time with an error.", "category": "technical", "article_id": "KB-016"}
+{"ticket_id": "E-21", "subject": "iPhone app freezing", "body": "The iOS app freezes on the splash screen and never loads.", "category": "technical", "article_id": "KB-011"}
+{"ticket_id": "E-22", "subject": "Where is my order", "body": "I ordered 3 days ago. How can I see where my package is?", "category": "shipping", "article_id": "KB-017"}
+{"ticket_id": "E-23", "subject": "How long does delivery take", "body": "How many days for delivery to a small town in Kerala?", "category": "shipping", "article_id": "KB-018"}
+{"ticket_id": "E-24", "subject": "Says delivered but nothing here", "body": "Tracking says delivered yesterday but I never got the parcel.", "category": "shipping", "article_id": "KB-019"}
+{"ticket_id": "E-25", "subject": "Wrong address on order", "body": "I put my old address by mistake on the order I just placed. Can you change it?", "category": "shipping", "article_id": "KB-020"}
+{"ticket_id": "E-26", "subject": "Customs fee to pay", "body": "Courier is asking me to pay import duty for my order to Singapore, why?", "category": "shipping", "article_id": "KB-021"}
+{"ticket_id": "E-27", "subject": "Tracking not updating", "body": "My tracking number has shown the same status for 6 days.", "category": "shipping", "article_id": "KB-017"}
+{"ticket_id": "E-28", "subject": "Express delivery available?", "body": "Do you offer next day delivery in Bangalore?", "category": "shipping", "article_id": "KB-018"}
+{"ticket_id": "E-29", "subject": "Can I return this", "body": "Bought shoes 20 days ago, never worn, can I still return them?", "category": "returns", "article_id": "KB-022"}
+{"ticket_id": "E-30", "subject": "How to return an item", "body": "I want to send back the jacket I ordered. What are the steps?", "category": "returns", "article_id": "KB-023"}
+{"ticket_id": "E-31", "subject": "Refund not received", "body": "I returned my item a week ago and still haven't got my money back.", "category": "returns", "article_id": "KB-024"}
+{"ticket_id": "E-32", "subject": "Item arrived broken", "body": "The glass vase was shattered when I opened the box today.", "category": "returns", "article_id": "KB-025"}
+{"ticket_id": "E-33", "subject": "Wrong size sent", "body": "I ordered a medium but received an XL shirt instead.", "category": "returns", "article_id": "KB-025"}
+{"ticket_id": "E-34", "subject": "Refund for COD order", "body": "I paid cash on delivery, how will my refund be paid back to me?", "category": "returns", "article_id": "KB-024"}
+{"ticket_id": "E-35", "subject": "Return a gift card", "body": "Can I return an unused gift card I bought by mistake?", "category": "returns", "article_id": "KB-022"}
+{"ticket_id": "E-36", "subject": "Phone support hours", "body": "What time can I call your support team on Saturday?", "category": "general", "article_id": "KB-026"}
+{"ticket_id": "E-37", "subject": "Export my data", "body": "I would like a copy of all the data you hold about me.", "category": "general", "article_id": "KB-027"}
+{"ticket_id": "E-38", "subject": "Loyalty points missing", "body": "I bought something last week but my reward points didn't show up.", "category": "general", "article_id": "KB-028"}
+{"ticket_id": "E-39", "subject": "Referral bonus", "body": "How does the refer a friend credit work?", "category": "general", "article_id": "KB-028"}
+{"ticket_id": "E-40", "subject": "Talk to a human", "body": "Is there a chat or phone number where I can talk to a real person?", "category": "general", "article_id": "KB-026"}

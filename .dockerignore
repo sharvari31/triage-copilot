@@ -1,0 +1,7 @@
+.env
+.venv
+__pycache__
+chroma
+*.db
+.pytest_cache
+.git
