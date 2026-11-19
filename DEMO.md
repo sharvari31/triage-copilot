@@ -28,5 +28,5 @@ instantly', so I added one self-correction pass."
 webhook posts the reply back into the Node/Express ticketing app."
 
 **50-60 s — Engineering.** "LangGraph agent, Chroma RAG, Pydantic-validated JSON with retry and fallback model,
-26 tests including timeouts and invalid JSON, a 40-ticket eval, Docker, live on Render, plus AWS ECS and Cloud
+27 tests including timeouts and invalid JSON, a 40-ticket eval, Docker, live on Render, plus AWS ECS and Cloud
 Run deploy scripts. The prompt log shows how I worked with Claude and what I fixed myself."
