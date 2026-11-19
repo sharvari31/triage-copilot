@@ -66,3 +66,12 @@ def test_api_key_required_when_configured(make_client):
 
 def test_invalid_ticket_rejected(make_client):
     assert make_client().post("/triage", json={"ticket_id": "T", "subject": "", "body": "x"}).status_code == 422
+
+
+def test_api_key_tolerates_pasted_whitespace(monkeypatch):
+    # Regression: key pasted into Render with a trailing newline caused 401 on the live URL.
+    from app.config import Settings
+    monkeypatch.setenv("SERVICE_API_KEY", "  s3cret\r\n")
+    assert Settings().service_api_key == "s3cret"
+    monkeypatch.setenv("SERVICE_API_KEY", '"s3cret"')
+    assert Settings().service_api_key == "s3cret"

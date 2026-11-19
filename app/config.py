@@ -3,7 +3,8 @@ from dataclasses import dataclass, field
 
 
 def _f(name: str, default: str) -> str:
-    return os.getenv(name, default)
+    # strip(): values pasted into hosting dashboards often carry an invisible trailing newline/space
+    return os.getenv(name, default).strip().strip('"').strip("'")
 
 
 @dataclass

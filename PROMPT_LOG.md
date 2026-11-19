@@ -17,7 +17,8 @@ Fill in **"What I changed / fixed myself"** as you go. That column shows the rev
 | 11 | 14:45 | GCP billing closed → asked Gemini why; it said "fraud check". | Searched Google docs + community reports: the real cause is a ₹1,000 UPI prepayment; refund and reopen aren't guaranteed for closed accounts. | **Found the real root cause myself** in Google Payments Center (critical alert: one-time ₹1,000 payment). Revoked the UPI AutoPay mandate to stay safe. |
 | 12 | 10:46 (day 2) | "What would you recommend to deploy this ASAP?" | Render Blueprint (repo + `render.yaml` ready, no card). | Noticed my repo had an older version without `render.yaml` (Render said "not found"), re-extracted v4 and pushed. |
 | 13 | 11:20 | Render shows **Live**. | Wrote the final README (architecture diagram, chunking, guardrails, API, Node integration, deploy status, improvements) + DEMO.md (live URL checklist, 60-second script). | Verified `/health` on the live URL: 28 KB chunks loaded. |
-| 14 | | | | |
+| 14 | 11:38 | Live `/triage` returned **401** even after re-pasting the key into Render, and both keys started and ended with the same characters. | First guessed my `.env` contained Claude's example comment text, but my check proved that **wrong**. Then diagnosed an invisible trailing newline from the clipboard paste. Fixed it in code: env values are stripped of whitespace and quotes, constant-time key compare, regression test (27 tests). | Ran the diagnostics (key length, first/last 4 chars, Render's value) that ruled out each theory. |
+| 15 | | | | |
 
 ## Key decisions (and why)
 - **Escalate, never guess:** low retrieval score, invalid LLM output after retry and fallback, a hallucinated citation, or a failed self-check all route to a human with the reason attached.

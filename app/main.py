@@ -1,3 +1,4 @@
+import hmac
 import logging
 from contextlib import asynccontextmanager
 
@@ -54,7 +55,7 @@ def create_app(settings: Settings | None = None, graph=None, kb=None, store=None
     app.state.sender = sender or make_webhook_sender(settings.ticketing_webhook_url)
 
     def require_key(x_api_key: str | None = Header(default=None)):
-        if settings.service_api_key and x_api_key != settings.service_api_key:
+        if settings.service_api_key and not hmac.compare_digest((x_api_key or "").strip(), settings.service_api_key):
             raise HTTPException(401, "invalid or missing X-API-Key")
 
     @app.get("/health")
