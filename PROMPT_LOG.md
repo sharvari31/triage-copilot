@@ -14,7 +14,10 @@ Fill in **"What I changed / fixed myself"** as you go. That column shows the rev
 | 8 | 12:36 | AWS CLI configured. | Wrote `deploy/deploy.ps1` (one idempotent command: Secrets Manager → ECR push → IAM exec role → logs → ECS cluster → task def → SG → service → prints live URL) plus `stop/start/url/teardown.ps1`. | |
 | 9 | 12:44 | Ran `deploy.ps1`; pasted `AccessDenied ... explicit deny in a service control policy` on Secrets Manager. | Identified the AWS Free-plan SCP (not an IAM problem); gave 3 CLI probes. ECS, ECR and SSM were all denied too. | Ran the probes; decided to ship on **Render** now and keep the AWS scripts as the documented production path. |
 | 10 | 12:46 | "Go Render." | Added `render.yaml` Blueprint, made the container honour `$PORT`, lowered memory use (single-thread ONNX) for Render's 512 MB free tier. | |
-| 11 | | | | |
+| 11 | 14:45 | GCP billing closed → asked Gemini why; it said "fraud check". | Searched Google docs + community reports: the real cause is a ₹1,000 UPI prepayment; refund and reopen aren't guaranteed for closed accounts. | **Found the real root cause myself** in Google Payments Center (critical alert: one-time ₹1,000 payment). Revoked the UPI AutoPay mandate to stay safe. |
+| 12 | 10:46 (day 2) | "What would you recommend to deploy this ASAP?" | Render Blueprint (repo + `render.yaml` ready, no card). | Noticed my repo had an older version without `render.yaml` (Render said "not found"), re-extracted v4 and pushed. |
+| 13 | 11:20 | Render shows **Live**. | Wrote the final README (architecture diagram, chunking, guardrails, API, Node integration, deploy status, improvements) + DEMO.md (live URL checklist, 60-second script). | Verified `/health` on the live URL: 28 KB chunks loaded. |
+| 14 | | | | |
 
 ## Key decisions (and why)
 - **Escalate, never guess:** low retrieval score, invalid LLM output after retry and fallback, a hallucinated citation, or a failed self-check all route to a human with the reason attached.
