@@ -1,0 +1,21 @@
+# Render Blueprint: New > Blueprint > pick this repo. Secrets are entered in the Render dashboard (sync: false).
+services:
+  - type: web
+    name: triage-copilot
+    runtime: docker
+    plan: free
+    region: singapore
+    healthCheckPath: /health
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false
+      - key: SERVICE_API_KEY
+        sync: false
+      - key: GROQ_MODEL
+        value: openai/gpt-oss-120b
+      - key: GROQ_FALLBACK_MODEL
+        value: openai/gpt-oss-20b
+      - key: MIN_RETRIEVAL_SCORE
+        value: "0.35"
+      - key: LLM_TIMEOUT_S
+        value: "20"

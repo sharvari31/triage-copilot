@@ -12,7 +12,9 @@ Fill in **"What I changed / fixed myself"** as you go. That column shows the rev
 | 6 | 11:05 | Pasted first real triage: **escalated**. The LLM draft invented "reset link sent instantly" and the self-check caught it. | Added a self-correction loop (reviewer issues → one redraft → re-check → escalate if still bad). Escalations keep the rejected draft for the human. 26 tests. | Spotted that the guardrail worked but the happy path never completed. |
 | 7 | 11:17 | "Start AWS from scratch on a new account with credits. Credits won't be used until someone tests it, right?" | Corrected me: Fargate bills per running second, not per request (~$0.75/day at 0.5 vCPU / 1 GB), and fixed its own earlier $10-12/mo estimate. Recommended the Free plan + stop/start scripts. | Created the new Free-plan account, budget alert, and `deployer` IAM user. Caught that the user had no permissions attached on the review screen and fixed it. |
 | 8 | 12:36 | AWS CLI configured. | Wrote `deploy/deploy.ps1` (one idempotent command: Secrets Manager → ECR push → IAM exec role → logs → ECS cluster → task def → SG → service → prints live URL) plus `stop/start/url/teardown.ps1`. | |
-| 9 | | | | |
+| 9 | 12:44 | Ran `deploy.ps1`; pasted `AccessDenied ... explicit deny in a service control policy` on Secrets Manager. | Identified the AWS Free-plan SCP (not an IAM problem); gave 3 CLI probes. ECS, ECR and SSM were all denied too. | Ran the probes; decided to ship on **Render** now and keep the AWS scripts as the documented production path. |
+| 10 | 12:46 | "Go Render." | Added `render.yaml` Blueprint, made the container honour `$PORT`, lowered memory use (single-thread ONNX) for Render's 512 MB free tier. | |
+| 11 | | | | |
 
 ## Key decisions (and why)
 - **Escalate, never guess:** low retrieval score, invalid LLM output after retry and fallback, a hallucinated citation, or a failed self-check all route to a human with the reason attached.

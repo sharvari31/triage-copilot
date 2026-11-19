@@ -1,7 +1,8 @@
 FROM python:3.11-slim
 
 ENV PYTHONDONTWRITEBYTECODE=1 PYTHONUNBUFFERED=1 \
-    CHROMA_DIR=/app/chroma KB_DIR=/app/kb DB_PATH=/data/triage.db
+    CHROMA_DIR=/app/chroma KB_DIR=/app/kb DB_PATH=/data/triage.db \
+    OMP_NUM_THREADS=1 TOKENIZERS_PARALLELISM=false
 WORKDIR /app
 
 COPY requirements.txt .
@@ -20,5 +21,6 @@ RUN mkdir -p /data && python -m scripts.ingest
 
 EXPOSE 8000
 HEALTHCHECK --interval=30s --timeout=5s --start-period=20s \
-  CMD python -c "import urllib.request; urllib.request.urlopen('http://localhost:8000/health')"
-CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]
+  CMD python -c "import os,urllib.request; urllib.request.urlopen('http://localhost:%s/health' % os.getenv('PORT','8000'))"
+# Render/Heroku-style platforms inject $PORT; locally and on ECS it defaults to 8000.
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port ${PORT:-8000}"]
